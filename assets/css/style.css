@@ -1,13 +1,19 @@
 /* Style CSS */
-
-
-
-
-
+body {
+    font-family: 'Titillium Web', sans-serif;
+}
+/* Form */
 
 .container {
     margin-top: 5%;
     background-color: white;;
+}
+
+form {
+    -webkit-box-shadow: 9px 11px 22px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px 11px 22px -11px rgba(0,0,0,0.75);
+    box-shadow: 9px 11px 22px -11px rgba(0,0,0,0.75);
+    border-radius: 15px;
 }
 
 .form-control:focus {
@@ -17,12 +23,24 @@
     box-shadow: 0 0 0 .1rem #4f5f768a;
 }
 
+a {
+    color:#4f5f76;  
+}
+.links:hover {
+
+    color:#384353;
+}
+input::placeholder{
+    font-style: italic;
+}
+
+
 /*Button*/
 
 .btn {
     background-color: white;
     color: rgb(42, 42, 42);
-    width: 200px;
+    width: 45%;
     height: 50px;
     border: solid 1px #4f5f76;
 }
@@ -31,10 +49,3 @@
     background-color: #4f5f76;
 }
 
-a {
-    color:#4f5f76;  
-}
-.links:hover {
-
-    color:#384353;
-}
