@@ -38,14 +38,27 @@ input::placeholder{
 /*Button*/
 
 .btn {
-    background-color: white;
-    color: rgb(42, 42, 42);
+    background-color: #4f5f76;
+    color: white;
     width: 45%;
     height: 50px;
     border: solid 1px #4f5f76;
 }
 
 .btn:hover {
-    background-color: #4f5f76;
+    background-color: white;
+    color:#4f5f76;
+}
+
+
+
+
+/* Font style */
+
+.error {
+    font-size: 12px;
+    color: rgba(185, 6, 6, 0.835);
+    padding: 0;
+    margin: 0;
 }
 

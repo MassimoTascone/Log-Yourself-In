@@ -25,12 +25,16 @@ include 'back.php'
                 <form class="text-center border p-5 m-5" method='POST' action="">
                     <p class="h2 mb-4">Register</p>
                     <!-- Username -->
-                    <input type="text" name="username" id="username" class="form-control mb-4" placeholder="Username">
+                    <input type="text" name="username" id="username" class="form-control mt-4" placeholder="Username">
+                    <span class="error"><?php echo $userErr ?></span>
                     <!-- Email -->
-                    <input type="email" name="mail" id="mail" class="form-control mb-4" placeholder="E-mail">
+                    <input type="email" name="mail" id="mail" class="form-control mt-4" placeholder="E-mail">
+                    <span class="error"><?php echo $mailErr ?></span>
                     <!-- Password -->
-                    <input type="password" name="password" id="password" class="form-control mb-4"
+                    <input type="password" name="password" id="password" class="form-control mt-4"
                         placeholder="Password">
+                    <span class="error"><?php echo $passErr ?></span>
+
 
                     <!-- Sign in button -->
                     <div class="text-center">
@@ -38,7 +42,11 @@ include 'back.php'
                     </div>
                     <!-- Register -->
                     <p>Go back to <a class="links" href="index.php">Login</a></p>
+                    <span>test</span>
                 </form>
             </div>
         </div>
     </div>
+</body>
+
+</html>

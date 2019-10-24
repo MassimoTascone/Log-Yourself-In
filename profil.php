@@ -14,7 +14,7 @@ include 'back.php'
     <link rel="icon" href="assets/img/favicon.ico" />
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Log In</title>
+    <title>Welcome</title>
 </head>
 
 <body>
@@ -23,26 +23,16 @@ include 'back.php'
             <div class="col-12 col-md-8 offset-md-2">
                 <!-- Default form login -->
                 <form class="text-center p-5 m-5" action="POST">
-                    <p class="h2 mb-4">Sign in</p>
+                    <p class="h2 mb-4">Welcome -insertname-</p>
                     <!-- Username -->
-                    <input type="text" name="username" id="username" class="form-control mb-4" placeholder="Username" required>
                     <!-- Email -->
-                    <input type="email" name="mail" id="mail" class="form-control mb-4" placeholder="E-mail" required>
                     <!-- Password -->
-                    <input type="password" name="" id="password" class="form-control mb-4"
-                        placeholder="Password" required>
                     <div class="d-flex justify-content-around">
-                        <div>
-                            <!-- Forgot password -->
-                            <a class="links" href="">Forgot password?</a>
+                        <div class="text-center">
+                            <button class="btn btn-info my-4" type="submit" name="register">Logout</button>
+                            <button class="btn btn-info my-4" type="submit" name="register">Edit Profil</button>
                         </div>
                     </div>
-                    <!-- Sign in button -->
-                    <div class="text-center">
-                        <button class="btn btn-info  my-4" type="submit">Sign in</button>
-                    </div>
-                    <!-- Register -->
-                    <p>Not a member? <a class="links" href="register.php">Register</a></p>
                 </form>
             </div>
         </div>
