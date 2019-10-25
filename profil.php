@@ -1,5 +1,12 @@
 <?php
-include 'back.php'
+session_start();
+include 'back.php';
+// Logout Button
+if (isset($_POST['logout'])) {
+    session_destroy();
+    // unset($_SESSION['username']);
+    header('location:index.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +21,7 @@ include 'back.php'
     <link rel="icon" href="assets/img/favicon.ico" />
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Welcome</title>
+    <title>Welcome, <?php echo $_SESSION['username']; ?> </title>
 </head>
 
 <body>
@@ -22,15 +29,13 @@ include 'back.php'
         <div class="row">
             <div class="col-12 col-md-8 offset-md-2">
                 <!-- Default form login -->
-                <form class="text-center p-5 m-5" action="POST">
-                    <p class="h2 mb-4">Welcome -insertname-</p>
-                    <!-- Username -->
-                    <!-- Email -->
-                    <!-- Password -->
+                <form class="text-center p-5 m-5" action="" method="post">
+                    <p class="h2 mb-4">Welcome home,  <?php echo $_SESSION['username']; ?></p>
+                    <!-- Options-->
                     <div class="d-flex justify-content-around">
                         <div class="text-center">
-                            <button class="btn btn-info my-4" type="submit" name="register">Logout</button>
-                            <button class="btn btn-info my-4" type="submit" name="register">Edit Profil</button>
+                            <button id="btnLogout" class="btn btn-info my-4" type="submit" name="edit">Edit Profil</button>
+                            <button id="btnEdit" class="btn btn-info my-4" type="submit" name="logout">Logout</button>
                         </div>
                     </div>
                 </form>

@@ -2,7 +2,7 @@
 
 // define variables and set to empty values
 $userErr = $mailErr = $passErr = "";
-$user = $mail = $psw = "";
+// $user = $mail = $psw = "";
 
 
 // openConnection();

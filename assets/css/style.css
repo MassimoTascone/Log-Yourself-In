@@ -45,6 +45,15 @@ input::placeholder{
     border: solid 1px #4f5f76;
 }
 
+#btnLogout{
+    margin: 15px;
+}
+
+#btnEdit {
+    margin: 15px;
+}
+
+
 .btn:hover {
     background-color: white;
     color:#4f5f76;

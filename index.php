@@ -1,5 +1,43 @@
 <?php
-include 'back.php'
+session_start();
+include 'back.php';
+// Taking into variables user's input
+if (isset($_POST['username'])) {
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $logError = "";
+    $sql = "SELECT * FROM student WHERE username = '$username'";
+
+    $query = mysqli_query($conn, $sql);
+    $numrows = mysqli_num_rows($query);
+    // echo $numrows;
+
+    if ($numrows == 0) {
+        $logError = "Username incorrect, please register first";
+    }
+    else {
+        $row = mysqli_fetch_assoc($query);
+        if (password_verify($_POST['password'], $row['password'])){
+            $_SESSION['id']=$row['id'];
+            $_SESSION['username']=$row['username'];
+            $_SESSION['email']=$row['email'];
+            $_SESSION['first_name']=$row['first_name'];
+            $_SESSION['last_name']=$row['last_name'];
+            $_SESSION['linkedin']=$row['linkedin'];
+            $_SESSION['github']=$row['github'];
+            header('location:profil.php');
+        }
+        
+		
+    }
+
+}
+
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -22,16 +60,16 @@ include 'back.php'
         <div class="row">
             <div class="col-12 col-md-8 offset-md-2">
                 <!-- Default form login -->
-                <form class="text-center p-5 m-5" action="POST">
+                <form class="text-center p-5 m-5" action="" method="post">
                     <p class="h2 mb-4">Sign in</p>
                     <!-- Username -->
-                    <input type="text" name="username" id="username" class="form-control mb-4" placeholder="Username" required>
-                    <!-- Email -->
-                    <input type="email" name="mail" id="mail" class="form-control mb-4" placeholder="E-mail" required>
+                    <input type="text" name="username" id="username" class="form-control mb-4" placeholder="Username"
+                        required>
                     <!-- Password -->
-                    <input type="password" name="" id="password" class="form-control mb-4"
-                        placeholder="Password" required>
+                    <input type="password" name="password" id="password" class="form-control mb-4" placeholder="Password"
+                        >
                     <div class="d-flex justify-content-around">
+                    <span class="error"><?php echo $logError ?></span>
                         <div>
                             <!-- Forgot password -->
                             <a class="links" href="">Forgot password?</a>
@@ -39,7 +77,7 @@ include 'back.php'
                     </div>
                     <!-- Sign in button -->
                     <div class="text-center">
-                        <button class="btn btn-info  my-4" type="submit">Sign in</button>
+                        <button class="btn btn-info  my-4" name="login" type="submit">Sign in</button>
                     </div>
                     <!-- Register -->
                     <p>Not a member? <a class="links" href="register.php">Register</a></p>
